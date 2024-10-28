@@ -1,10 +1,9 @@
-import photo from "../images/me.jpg"
 
 const HomePage = () => {
-  return <main className="h-screen flex justify-around">
-    <h2 className=" font-semibold text-3xl text-[#cbcfcd]">Ewa Jochymková</h2>
-    <img src={photo} alt="profile" className="h-40 w-40 rounded-[50%] opacity-80 sm:h-80 sm:w-80" />
-  </main>
+  return <main className="flex flex-col justify-center items-center md:items-end text-[#cbcfcd] md:mr-36 2xl:mr-80">
+      <h2 className=" font-semibold text-xl mt-80 italic sm:text-3xl lg:text-5xl">Ewa Jochymková</h2>
+      <p className=" pt-5 font-thin italic font lg:text-2xl">Cesta od účetní k programování</p>
+    </main>
 }
 
 export default HomePage

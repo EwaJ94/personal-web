@@ -13,5 +13,27 @@
 }
 
 body {
-    background-color: #042326;
+    background-image: url("./images/work1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 4rem 30rem;
+    background-color: #445c62;
+}
+
+@media (min-width: 640px) {
+    body {
+        background-position: 7rem 30rem;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        background-position: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        background-size: 60%;
+    }
 }
