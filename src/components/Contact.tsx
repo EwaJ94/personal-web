@@ -1,11 +1,7 @@
 
 
 const Contact = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+  return <section className=""></section>
 }
 
 export default Contact
