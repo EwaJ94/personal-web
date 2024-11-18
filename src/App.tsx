@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import HomePage from "./pages/HomePage"
+import About from "./pages/About"
+import Projects from "./pages/Projects"
+import Contact from "./pages/Contact"
+import Error from "./pages/Error"
+import SharedLayout from "./pages/SharedLayout"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  return <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SharedLayout />} >
+          <Route index element={ <HomePage/> }/>
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />}/>
+          <Route path="/contact" element={<Contact />}/>
+          <Route path="*" element={<Error/>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  
 }
 
-export default App;
+export default App
