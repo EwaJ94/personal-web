@@ -9,7 +9,7 @@ import github from "../images/github.png"
 import ts from "../images/ts.png"
 
 const Projects = () => {
-  return <section id="projects" className="h-screen flex flex-col items-center justify-center">
+  return <section id="projects" className="flex flex-col items-center justify-center 2xl:h-screen">
     <h2 className="font-bold text-3xl pb-5 text-[#cbcfcd]">Projekty</h2>
     <p className="pb-5 text-[#cbcfcd]">V projektech jsem pracova s těmito technologiemi:</p>
     <div className="flex gap-3 pb-10 sm:gap-5">
