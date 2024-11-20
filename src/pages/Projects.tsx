@@ -7,21 +7,40 @@ import tw from "../images/tailwind.png"
 import git from "../images/git.png"
 import github from "../images/github.png"
 import ts from "../images/ts.png"
+import { motion } from "framer-motion"
+
+const mainVariants = {
+  hidden: {opacity:0},
+  visible: {
+    opacity:1,
+    transition: {
+      delay: 0.5,
+      duration: 2,
+    }
+  }
+}
 
 const Projects = () => {
   return <section id="projects" className="flex flex-col items-center justify-center 2xl:h-screen">
-    <h2 className="font-bold text-3xl pb-5 text-[#cbcfcd]">Projekty</h2>
-    <p className="pb-5 text-[#cbcfcd]">V projektech jsem pracova s těmito technologiemi:</p>
-    <div className="flex gap-3 pb-10 sm:gap-5">
-      <img src={html} alt="html 5" className="h-10 hover:scale-110" />
-      <img src={css} alt="css" className="h-10 hover:scale-110" />
-      <img src={tw} alt="tailwind css" className="h-10 hover:scale-110" />
-      <img src={js} alt="javascript" className="h-10 hover:scale-110" />
-      <img src={ts} alt="typescript" className="h-10 hover:scale-110" />
-      <img src={react} alt="react js" className="h-10 hover:scale-110" />
-      <img src={git} alt="git" className="h-10 hover:scale-110" />
-      <img src={github} alt="github" className="h-10 hover:scale-110" />
-    </div>
+    <motion.div
+    variants={mainVariants}
+    initial="hidden"
+    animate="visible"
+    className="flex flex-col justify-center items-center
+    ">
+      <h2 className="font-bold text-3xl pb-5 text-[#cbcfcd]">Projekty</h2>
+      <p className="pb-5 text-[#cbcfcd]">V projektech jsem pracova s těmito technologiemi:</p>
+      <div className="flex gap-3 pb-10 sm:gap-5">
+        <img src={html} alt="html 5" className="h-10 hover:scale-110" />
+        <img src={css} alt="css" className="h-10 hover:scale-110" />
+        <img src={tw} alt="tailwind css" className="h-10 hover:scale-110" />
+        <img src={js} alt="javascript" className="h-10 hover:scale-110" />
+        <img src={ts} alt="typescript" className="h-10 hover:scale-110" />
+        <img src={react} alt="react js" className="h-10 hover:scale-110" />
+        <img src={git} alt="git" className="h-10 hover:scale-110" />
+        <img src={github} alt="github" className="h-10 hover:scale-110" />
+      </div>
+    </motion.div>
     <OneProject/>
 
   </section>

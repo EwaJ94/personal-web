@@ -1,6 +1,18 @@
 import { useState } from "react"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/ReactToastify.css"
+import { motion } from "framer-motion"
+
+const mainVariants = {
+  hidden: {opacity:0},
+  visible: {
+    opacity:1,
+    transition: {
+      delay: 0.5,
+      duration: 2,
+    }
+  }
+}
 
 type FormData = {
   name: string;
@@ -80,10 +92,14 @@ const Contact = () => {
       }
 
   return <section id="contact" className="h-screen flex justify-center items-center">
-    <div className="h-[48rem] w-[20rem] flex flex-col items-center bg-[#1C1E12] rounded-lg sm:w-[25rem] md:w-[35rem] ">
+    <motion.div 
+      variants={mainVariants}
+      initial="hidden"
+      animate="visible"
+    className="h-[48rem] w-[20rem] flex flex-col items-center bg-[#1C1E12] rounded-lg sm:w-[25rem] md:w-[35rem] ">
       <div className="flex flex-col justify-center items-center h-[15rem] ">
         <h2 className="pb-5 font-bold text-3xl text-[#cbcfcd]">Kontakt</h2>
-        <p className="text-center text-[#cbcfcd]">Kontaktovat mě můžete e-mailem: <b className="cursor-pointer">ewa.jochymkova@seznam.cz</b>, přes <a href="https://www.linkedin.com/in/ewa-jochymkov%C3%A1-59770a287/" className="font-bold">LinkedIn</a> nebo pomocí kontaktního formuláře.</p>
+        <p className="text-center text-[#cbcfcd]">Kontaktovat mě můžete e-mailem: <b>ewa.jochymkova@seznam.cz</b>, přes <a href="https://www.linkedin.com/in/ewa-jochymkova" className="font-bold">LinkedIn</a> nebo pomocí kontaktního formuláře.</p>
       </div>
       <form onSubmit={handleSubmit} className="h-[40rem] flex flex-col items-center">
         <label className="font-semibold text-[#cbcfcd] py-3">Jméno</label>
@@ -107,10 +123,15 @@ const Contact = () => {
         <textarea cols={25} rows={10} name="message" value={formData.message} onChange={handleChange} className={`rounded-md pl-2 pt-2 resize-none outline-none md:w-[20rem] ${errors.message ? "border-red-500 border-2" : ""}`} placeholder="Text"
         required></textarea>
        
-        <input type="submit" value="Odeslat" className="w-20 h-10 my-7  outline-none text-[#cbcfcd] font-semibold rounded-md border border-[#cbcfcd] hover:bg-[#cbcfcd] hover:text-[#1C1E12] active:scale-110" />
+        <motion.input type="submit" value="Odeslat" 
+        whileHover={{
+          textShadow: "0px 0px 8px #ffffff",
+          boxShadow: "0px 0px 8px #ffffff"
+        }}
+        className="w-20 h-10 my-7  outline-none text-[#cbcfcd] font-semibold rounded-md border border-[#cbcfcd] active:scale-110" />
       </form>
       <ToastContainer position="bottom-center" autoClose={3000} />
-    </div>
+    </motion.div>
   </section>
 }
 

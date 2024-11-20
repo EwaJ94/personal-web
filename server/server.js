@@ -2,6 +2,8 @@ import express from "express";
 import nodemailer from "nodemailer";
 import cors from "cors";
 import pkg from "body-parser";
+import dotenv from "dotenv";
+dotenv.config();
 
 const { json } = pkg;
 const app = express();
@@ -11,8 +13,8 @@ app.use(json());
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "MAIL", 
-    pass: "PASSWORD" 
+    user: process.env.REACT_APP_MAIL, 
+    pass: process.env.REACT_APP_PASSWORD
   }
 });
 
