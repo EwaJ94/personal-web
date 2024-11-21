@@ -26,10 +26,10 @@ const Projects = () => {
     variants={mainVariants}
     initial="hidden"
     animate="visible"
-    className="flex flex-col justify-center items-center
-    ">
+    className="flex flex-col justify-center items-center">
       <h2 className="font-bold text-3xl pb-5 text-[#cbcfcd]">Projekty</h2>
       <p className="pb-5 text-[#cbcfcd]">V projektech jsem pracova s těmito technologiemi:</p>
+
       <div className="flex gap-3 pb-10 sm:gap-5">
         <img src={html} alt="html 5" className="h-10 hover:scale-110" />
         <img src={css} alt="css" className="h-10 hover:scale-110" />
@@ -41,10 +41,9 @@ const Projects = () => {
         <img src={github} alt="github" className="h-10 hover:scale-110" />
       </div>
     </motion.div>
-    <OneProject/>
 
+    <OneProject/>
   </section>
 }
 
 export default Projects
-

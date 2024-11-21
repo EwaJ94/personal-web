@@ -10,7 +10,6 @@ const SharedLayout = () => {
     </div>
       <Footer/>
   </div>
-
 }
 
 export default SharedLayout

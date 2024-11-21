@@ -47,8 +47,6 @@ app.post("/send", (req, res) => {
   });
 });
 
-
 app.listen(5000, () => {
   console.log("Server běží na http://localhost:5000");
 });
-
