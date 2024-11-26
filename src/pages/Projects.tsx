@@ -21,16 +21,16 @@ const mainVariants = {
 }
 
 const Projects = () => {
-  return <section id="projects" className="flex flex-col items-center justify-center 2xl:h-screen">
+  return <section id="projects" className="flex flex-col items-center justify-center my-5 2xl:h-screen">
     <motion.div
     variants={mainVariants}
     initial="hidden"
     animate="visible"
     className="flex flex-col justify-center items-center">
-      <h2 className="font-bold text-3xl pb-5 text-[#cbcfcd]">Projekty</h2>
+      <h2 className="font-bold text-2xl pb-5 text-[#cbcfcd] sm:text-3xl">Projekty</h2>
       <p className="pb-5 text-[#cbcfcd]">V projektech jsem pracova s těmito technologiemi:</p>
 
-      <div className="flex gap-3 pb-10 sm:gap-5">
+      <div className="flex flex-wrap justify-center gap-5 pb-10">
         <img src={html} alt="html 5" className="h-10 hover:scale-110" />
         <img src={css} alt="css" className="h-10 hover:scale-110" />
         <img src={tw} alt="tailwind css" className="h-10 hover:scale-110" />

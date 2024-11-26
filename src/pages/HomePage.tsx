@@ -37,7 +37,7 @@ const HomePage = () => {
     initial="hidden"
     animate="visible"
     className="flex flex-col justify-center items-center">
-      <h2 className=" font-semibold text-2xl italic sm:text-3xl lg:text-5xl">Ewa Jochymková</h2>
+      <h2 className="font-semibold text-2xl italic sm:text-3xl lg:text-5xl">Ewa Jochymková</h2>
       <p className=" pt-5 font-thin italic font lg:text-2xl">Junior Frontend Developer</p>
       <div className="flex justify-between w-20 pt-5">
         <a href="https://github.com/EwaJ94">
@@ -51,7 +51,7 @@ const HomePage = () => {
     variants={imgVariants}
     initial="hidden"
     animate="visible">
-      <img src={work} alt="working woman" className="h-[30rem] md:h-[35rem]" />
+      <img src={work} alt="working woman" className="h-[25rem] md:h-[35rem]" />
     </motion.div>
   </main>
 }

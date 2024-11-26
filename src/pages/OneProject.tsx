@@ -66,7 +66,7 @@ const OneProject = () => {
     return <motion.div 
         variants={itemVariants}
         key={id} 
-        className="flex flex-col justify-around items-center h-[35rem] w-[20rem] bg-[#1C1E12] rounded-lg mb-5 sm:w-[25rem] ">
+        className="flex flex-col justify-around items-center h-[38rem] w-[20rem] bg-[#1C1E12] rounded-lg mb-5 sm:w-[25rem] ">
           <img src={image} alt={name} className="h-52 w-72 m-10"/>
           <h3 className="text-[#cbcfcd] font-bold">{name}</h3>
           <p className="text-[#cbcfcd] p-5 text-center">{about}</p>
