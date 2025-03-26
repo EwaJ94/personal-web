@@ -16,8 +16,8 @@ const AboutMe = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a")
-    link.href = `${process.env.PUBLIC_URL}/CV_Ewa_Jochymková.pdf`
-    link.download = "CV_Ewa_Jochymková.pdf"
+    link.href = `${process.env.PUBLIC_URL}/CV_Ewa_Jochymkova.pdf`
+    link.download = "CV_Ewa_Jochymkova.pdf"
     link.click()
   }
 

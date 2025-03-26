@@ -1,7 +1,9 @@
 import { useState } from "react"
+import axios from "axios";
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/ReactToastify.css"
 import { motion } from "framer-motion"
+
 
 const mainVariants = {
   hidden: {opacity:0},
@@ -64,18 +66,22 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
     const formErrors = validate()
     if (Object.keys(formErrors).length === 0) {
       try {
-        const response = await fetch("http://localhost:5000/send", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(formData)
-        });
-
-        if (response.ok) {
+        const response = await axios.post(
+          "https://ewajochymkova.cz/backend/contact-form.php",
+          formData,
+          {
+            headers: { 
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            }, 
+          }
+        );
+        
+        if (response.data.status === "success") {
           toast.success("Formulář byl úspěšně odeslán.")
           setFormData({name:"", email:"", message:""})
           setErrors({})
@@ -89,7 +95,7 @@ const Contact = () => {
         } else {
           Object.values(formErrors).forEach((error) => toast.error(error))
         }
-      }
+      } 
 
   return <section id="contact" className="h-screen flex justify-center items-center">
     <motion.div 
