@@ -71,6 +71,11 @@ if (!$email) {
     exit;
 }
 
+// Odeslání potvrzení přijatých dat (status success)
+echo json_encode(["status" => "success", "received" => $data]);
+exit; // Tady končíme a neprocházíme odesláním e-mailu, pokud nepotřebujeme čekat na odpověď na odeslání e-mailu.
+
+// Nyní přichází část pro odeslání e-mailu, která bude zpracována samostatně, pokud je potřeba
 $mail = new PHPMailer(true);
 
 try {
@@ -81,6 +86,7 @@ try {
     $mail->Encoding = "base64";
     $mail->SMTPDebug = 3; // Zkuste zvýšit debug level pro lepší výstup
     $mail->Debugoutput = 'echo';
+    $mail->Debugoutput = 'error_log';
 
     $mail->Username = $_ENV["SMTP_USER"];
     $mail->Password = $_ENV["SMTP_PASS"];
