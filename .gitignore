@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-api/node_modules
+/my-web/api/node_modules
 /.pnp
 .pnp.js
 
@@ -10,7 +10,7 @@ api/node_modules
 /coverage
 
 # production
-/build
+/my-web/api/build
 
 # misc
 .DS_Store
@@ -26,4 +26,4 @@ yarn-error.log*
 .env
 .vercel
 /vendor/
-backend/vendor
+/backend/vendor
