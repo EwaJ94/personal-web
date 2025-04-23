@@ -1,12 +1,13 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 require 'vendor/PHPMailer/src/Exception.php';
 require 'vendor/PHPMailer/src/PHPMailer.php';
 require 'vendor/PHPMailer/src/SMTP.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
 
 function loadEnv($path) {
     if (!file_exists($path)) {
@@ -62,7 +63,7 @@ $email = isset($data["email"]) ? filter_var($data["email"], FILTER_VALIDATE_EMAI
 $message = isset($data["message"]) ? htmlspecialchars($data["message"]) : '';
 
 if (empty($name) || empty($email) || empty($message)) {
-    echo json_encode(["status" => "error", "message" => "Všechna pole musí být vyplněna"]);
+    echo json_encode(["status" => "error", "message" => "Všechna pole musí být vyplněná"]);
     exit;
 }
 
