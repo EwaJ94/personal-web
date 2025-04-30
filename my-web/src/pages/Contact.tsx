@@ -4,7 +4,6 @@ import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/ReactToastify.css"
 import { motion } from "framer-motion"
 
-
 const mainVariants = {
   hidden: {opacity:0},
   visible: {
@@ -72,7 +71,7 @@ const Contact = () => {
       try {
         const response = await axios.post(
           "https://ewajochymkova.cz/backend/contact-form.php",
-          formData,
+          JSON.stringify(formData),
           {
             headers: { 
               'Content-Type': 'application/json',
